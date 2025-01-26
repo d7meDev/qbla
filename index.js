@@ -1,5 +1,8 @@
 const degree = document.getElementById("degree");
-
+const fire = () => { window.addEventListener('deviceorientation' ,event => {
+    
+    degree.textContent = `${event.alpha} deg`;
+})};
 
 if(typeof DeviceOrientationEvent.requestPermission === 'function'){
     
@@ -19,7 +22,4 @@ else{
 
 
 
-const fire = () => { window.addEventListener('deviceorientation' ,event => {
-    
-    degree.textContent = `${event.alpha} deg`;
-})};
+
