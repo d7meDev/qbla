@@ -1,7 +1,9 @@
 const degree = document.getElementById("degree");
 const fire = () => { window.addEventListener('deviceorientation' ,event => {
     
-    degree.textContent = `${event.alpha.toFixed(0)} deg`;
+    setTimeout(() => {
+        degree.textContent = `${event.alpha.toFixed(0)} deg`;
+    },500)
 })};
 
 
