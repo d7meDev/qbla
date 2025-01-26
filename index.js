@@ -1,7 +1,7 @@
 const degree = document.getElementById("degree");
-const fire = () => { window.addEventListener('deviceorientation' ,event => {
+const fire = message => { window.addEventListener('deviceorientation' ,event => {
     
-    degree.textContent = `${event.alpha} deg`;
+    degree.textContent = `${event.alpha} deg\n ${message}`;
 })};
 
 
@@ -12,7 +12,7 @@ async function compass(){
         
         const permissionState = await DeviceOrientationEvent.requestPermission();
             if (permissionState === 'granted') {
-                fire();
+                fire(1);
                
             } else {
                 alert('Permission denied for device orientation');
@@ -20,7 +20,7 @@ async function compass(){
       
     }
     else if('DeviceOrientationEvent' in window){
-        fire();
+        fire(2);
         
     }
     else{
