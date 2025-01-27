@@ -37,3 +37,4 @@ async function compass(){
 }
 
 
+// if you are reading this Thanks :)
