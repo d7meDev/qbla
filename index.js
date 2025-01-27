@@ -2,12 +2,12 @@ const degree = document.getElementById("degree");
 const img = document.querySelector('img');
 const fire = () => { window.addEventListener('deviceorientation' ,event => {
     
-    
+    setTimeout(() => {
         let heading = event.webkitCompassHeading || event.alpha;
-        heading = heading % 360;
-        degree.textContent = `${Math.floor(heading)} deg`;
+        heading = Math.floor(heading) % 360;
+        degree.textContent = `${heading} deg`;
         img.style.transform = `translate(-50%,-50%) rotate(${-heading}deg)`
-   
+    },250)
 })};
 
 
