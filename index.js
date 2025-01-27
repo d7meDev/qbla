@@ -32,6 +32,8 @@ async function compass(){
     else{
         alert("This device dose not support device orientation")
     }
+
+    document.querySelector('button').remove();
 }
 
 
