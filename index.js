@@ -5,7 +5,7 @@ const fire = () => { window.addEventListener('deviceorientation' ,event => {
     
         let heading = event.webkitCompassHeading || event.alpha;
         heading = heading % 360;
-        degree.textContent = `${heading.toFixed(0)} deg`;
+        degree.textContent = `${Math.floor(heading)} deg`;
         img.style.transform = `translate(-50%,-50%) rotate(${-heading}deg)`
    
 })};
